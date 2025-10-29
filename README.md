@@ -68,3 +68,18 @@ Aplikasi berjalan di terminal (console) dan digunakan untuk **menambah dan menam
 3. Jalankan:
 ```bash
 dart run
+
+---
+
+### Contoh Penggunaan Program
+
+** 1 Menambah Buku Baru**
+
+** 2 Menambahkan Buku Lagi**
+
+
+** 3 Menampilkan Daftar Buku**
+
+
+**  4 Keluar dari Program**
+
