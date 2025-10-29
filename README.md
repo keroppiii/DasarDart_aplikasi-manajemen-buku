@@ -64,13 +64,13 @@ Aplikasi berjalan di terminal (console) dan digunakan untuk **menambah dan menam
 
 ### Cara Menjalankan
 
-** 1 Menambah Buku Baru**
+**1 Menambah Buku Baru**
 
-** 2 Menambahkan Buku Lagi**
+**2 Menambahkan Buku Lagi**
 
-** 3 Menampilkan Daftar Buku**
+**3 Menampilkan Daftar Buku**
 
-** 4 Keluar dari Program**
+**4 Keluar dari Program**
 
 ---
 
@@ -81,7 +81,6 @@ Aplikasi berjalan di terminal (console) dan digunakan untuk **menambah dan menam
 ```bash
 dart run
 
----
 
 
 
