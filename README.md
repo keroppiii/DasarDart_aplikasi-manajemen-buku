@@ -63,6 +63,18 @@ Aplikasi berjalan di terminal (console) dan digunakan untuk **menambah dan menam
 ---
 
 ### Cara Menjalankan
+
+** 1 Menambah Buku Baru**
+
+** 2 Menambahkan Buku Lagi**
+
+** 3 Menampilkan Daftar Buku**
+
+** 4 Keluar dari Program**
+
+---
+
+### Cara Menjalankan
 1. Pastikan Dart SDK sudah terpasang.  
 2. Buka terminal di folder proyek.  
 3. Jalankan:
@@ -71,13 +83,5 @@ dart run
 
 ---
 
-### Contoh Penggunaan Program
 
-** 1 Menambah Buku Baru**
-
-** 2 Menambahkan Buku Lagi**
-
-** 3 Menampilkan Daftar Buku**
-
-**  4 Keluar dari Program**
 
