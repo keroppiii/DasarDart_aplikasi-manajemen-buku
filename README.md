@@ -1,88 +1,70 @@
-## Aplikasi Manajemen Buku
+## Aplikasi Manajemen Buku 
+---
+##### Fatimah Nurmawati
+##### Shift C
+---
 
-### Fatimah Nurmawati
-### Shift C
-
-Program ini dibuat menggunakan **Dart** untuk menerapkan dasar-dasar pemrograman seperti:
-- Input dan output
-- Percabangan (`if else`)
-- Perulangan (`while`)
-- List dan Map
-- Fungsi
-
-Aplikasi ini berjalan di terminal dan berfungsi untuk menambah dan menampilkan daftar buku.
+Program ini dibuat menggunakan **Dart** untuk menerapkan dasar-dasar pemrograman.  
+Aplikasi berjalan di terminal (console) dan digunakan untuk **menambah dan menampilkan daftar buku**.
 
 ---
 
-## 💻 Kode Program dan Penjelasan
+### Penjelasan Kode Program
 
-```dart
-// Import library untuk input/output
-import 'dart:io';
+1. **Import Library**
+   - `import 'dart:io';` digunakan untuk input/output di terminal (`stdin.readLineSync()` & `print`).
 
-void main() {
-  // List untuk menyimpan data buku (tiap buku berupa Map)
-  List<Map<String, dynamic>> daftarBuku = [];
+2. **List untuk Menyimpan Buku**
+   - `List<Map<String, dynamic>> daftarBuku = [];`  
+     Menyimpan semua buku. Setiap buku berupa Map dengan kunci: `judul`, `penulis`, `tahun`.
 
-  // Perulangan utama agar menu tampil terus sampai user memilih keluar
-  while (true) {
-    print('\n=== Aplikasi Manajemen Buku ===');
-    print('1. Tambah Buku');
-    print('2. Tampilkan Buku');
-    print('3. Keluar');
-    stdout.write('Pilih menu (1-3): ');
-    String? input = stdin.readLineSync(); // Baca input user
+3. **Main Loop (Menu Utama)**
+   - `while (true)` membuat menu terus muncul sampai user memilih keluar.  
+   - Menu:
+     1. Tambah Buku  
+     2. Tampilkan Buku  
+     3. Keluar  
+   - Input pengguna dibaca dengan `stdin.readLineSync()`.  
+   - Percabangan (`if-else`) menentukan fungsi yang dijalankan:
+     - `'1'` → `tambahBuku()`  
+     - `'2'` → `tampilkanBuku()`  
+     - `'3'` → keluar loop (`break`)  
+     - Lainnya → pesan “Pilihan tidak valid”
 
-    // Percabangan untuk menentukan aksi sesuai input
-    if (input == '1') {
-      tambahBuku(daftarBuku);
-    } else if (input == '2') {
-      tampilkanBuku(daftarBuku);
-    } else if (input == '3') {
-      print('Terima kasih telah menggunakan aplikasi ini!');
-      break; // Hentikan loop
-    } else {
-      print('Pilihan tidak valid, silakan coba lagi.');
-    }
-  }
-}
+4. **Fungsi `tambahBuku()`**
+   - Meminta input: judul, penulis, tahun.  
+   - Jika valid, menambahkan buku ke `daftarBuku` dengan format Map:
+     ```
+     {'judul': ..., 'penulis': ..., 'tahun': ...}
+     ```
+   - Menampilkan konfirmasi berhasil atau gagal.
 
-// Fungsi untuk menambah buku baru
-void tambahBuku(List<Map<String, dynamic>> daftarBuku) {
-  stdout.write('\nMasukkan judul buku: ');
-  String? judul = stdin.readLineSync();
+5. **Fungsi `tampilkanBuku()`**
+   - Mengecek apakah `daftarBuku` kosong:
+     - Kosong → pesan “Belum ada buku yang ditambahkan.”  
+     - Ada isi → menampilkan semua buku dengan nomor urut:
+       ```
+       1. Judul Buku - Penulis (Tahun)
+       ```
 
-  stdout.write('Masukkan nama penulis: ');
-  String? penulis = stdin.readLineSync();
+6. **Alur Program**
+   1. Program mulai dari `main()` → menampilkan menu.  
+   2. User memilih opsi → program mengeksekusi fungsi sesuai pilihan.  
+   3. Program kembali ke menu utama setelah selesai.  
+   4. Berulang sampai user memilih keluar (`3`).
 
-  stdout.write('Masukkan tahun terbit: ');
-  String? tahun = stdin.readLineSync();
+7. **Konsep Pemrograman yang Dipakai**
+   - Variabel & tipe data (`String`, `List`, `Map`)  
+   - Input/output terminal (`stdin`, `stdout`)  
+   - Percabangan (`if-else`)  
+   - Perulangan (`while`, `for`)  
+   - Fungsi modular (`tambahBuku()`, `tampilkanBuku()`)
 
-  // Jika semua data diisi, tambahkan ke list
-  if (judul != null && penulis != null && tahun != null) {
-    daftarBuku.add({
-      'judul': judul,
-      'penulis': penulis,
-      'tahun': tahun,
-    });
-    print('✅ Buku "$judul" berhasil ditambahkan!');
-  } else {
-    print('❌ Gagal menambahkan buku. Pastikan semua data diisi.');
-  }
-}
+---
 
-// Fungsi untuk menampilkan daftar buku
-void tampilkanBuku(List<Map<String, dynamic>> daftarBuku) {
-  print('\n=== Daftar Buku ===');
-
-  // Jika list kosong
-  if (daftarBuku.isEmpty) {
-    print('Belum ada buku yang ditambahkan.');
-  } else {
-    // Tampilkan semua buku dengan nomor urut
-    for (int i = 0; i < daftarBuku.length; i++) {
-      var buku = daftarBuku[i];
-      print('${i + 1}. ${buku['judul']} - ${buku['penulis']} (${buku['tahun']})');
-    }
-  }
-}
+### Cara Menjalankan
+1. Pastikan Dart SDK sudah terpasang.  
+2. Buka terminal di folder proyek.  
+3. Jalankan:
+```bash
+dart run
